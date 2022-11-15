@@ -3,6 +3,7 @@ package com.freedom.algorithm.test;
 import com.freedom.algorithm.sort.Bubble;
 import com.freedom.algorithm.sort.Insertion;
 import com.freedom.algorithm.sort.Selection;
+import com.freedom.algorithm.sort.Shell;
 import com.freedom.common.Tools;
 
 /**
@@ -22,7 +23,10 @@ public class AlgorithmTest {
 //        System.out.println("选择排序后：");
 //        Tools.displayArrays(Selection.SelectionSort(arrays, true));
 
-        System.out.println("插入排序后：");
-        Tools.displayArrays(Insertion.InsertionSort(arrays, false));
+//        System.out.println("插入排序后：");
+//        Tools.displayArrays(Insertion.InsertionSort(arrays, false));
+
+        System.out.println("希尔排序后：");
+        Tools.displayArrays(Shell.ShellSort(arrays, true));
     }
 }
