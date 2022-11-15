@@ -16,7 +16,7 @@ public class Shell {
      * @Return java.lang.Comparable<T>[]
      * @Author Freedom0013 @Date 2022-11-15
      */
-    public static <T> Comparable<T>[] ShellSort(Comparable<T>[] array, boolean isDesc) {
+    public static <T> Comparable<T>[] shellSort(Comparable<T>[] array, boolean isDesc) {
         if (array == null || array.length < 2) {
             return array;
         }

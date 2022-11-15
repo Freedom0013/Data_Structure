@@ -1,7 +1,7 @@
 package com.freedom.common;
 
 /**
- * 排序算法工具类
+ * 工具类
  * @author Freedom0013 @date 2022-11-14
  * @version V1.00
  */
