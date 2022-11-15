@@ -10,7 +10,9 @@ import com.freedom.common.Tools;
 public class Bubble {
     /**
      * 冒泡排序
+     * 依次对比最大元素放入最大位置，稳定排序类型，时间复杂度：O(n^2)（for循环嵌套）
      * @param array 待排数组
+     * @param isDesc 是否倒序
      * @Return void
      * @Author Freedom0013 @Date 2022-11-15
      */
