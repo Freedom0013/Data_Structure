@@ -1,6 +1,7 @@
 package com.freedom.algorithm.test;
 
 import com.freedom.algorithm.sort.Bubble;
+import com.freedom.algorithm.sort.Selection;
 import com.freedom.common.Tools;
 
 /**
@@ -14,7 +15,10 @@ public class AlgorithmTest {
         System.out.println("排序前：");
         Tools.displayArrays(arrays);
 
-        System.out.println("倒序冒泡排序后：");
-        Tools.displayArrays(Bubble.bubbleSort(arrays, true));
+//        System.out.println("倒序冒泡排序后：");
+//        Tools.displayArrays(Bubble.bubbleSort(arrays, true));
+
+        System.out.println("选择排序后：");
+        Tools.displayArrays(Selection.SelectionSort(arrays, true));
     }
 }
