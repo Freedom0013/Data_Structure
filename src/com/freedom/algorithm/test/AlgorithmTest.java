@@ -22,13 +22,12 @@ public class AlgorithmTest {
 //        Tools.displayArrays(Insertion.insertionSort(arrays, false));
 //        System.out.println("希尔排序后：");
 //        Tools.displayArrays(Shell.shellSort(arrays, false));
+//        System.out.println("归并排序后：");
+//        Merge.mergeSort(arrays, false);
+//        Tools.displayArrays(arrays);
+        System.out.println("快速排序后：");
+        Tools.displayArrays(Quick.quickSort(arrays, false));
 
-        System.out.println("归并排序后：");
-        Merge.mergeSort(arrays, false);
-        Tools.displayArrays(arrays);
-
-//        System.out.println("快速排序后：");
-//        Tools.displayArrays(Shell.ShellSort(arrays, false));
 //        System.out.println("堆排序后：");
 //        Tools.displayArrays(Shell.ShellSort(arrays, false));
 
