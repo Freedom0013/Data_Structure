@@ -115,11 +115,11 @@ public class SequenceList<T> implements Iterable<T>{
 
     /**
      * 对内部数组长度进行可变后进行数组扩容或缩小
-     * @param newsize 新的内部数组容量值
+     * @param resize 新的内部数组容量值
      */
-    private void reSize(int newSize) {
+    private void reSize(int resize) {
         T[] temp = arrays;
-        arrays = (T[]) new Object[newSize];
+        arrays = (T[]) new Object[resize];
         for (int i = 0; i < size; i++) {
             arrays[i] = temp[i];
         }

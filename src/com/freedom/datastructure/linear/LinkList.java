@@ -37,7 +37,7 @@ public class LinkList<T> implements Iterable<T>{
      * @Return T 元素值
      */
     public T get(int index) {
-        if (index < 0) {
+        if (index < 0 || isEmpty()) {
             return null;
         }
         Node current = this.head.next;
@@ -52,6 +52,9 @@ public class LinkList<T> implements Iterable<T>{
      * @param t 待查询元素
      */
     public int indexOf(T t) {
+        if (isEmpty()) {
+            return -1;
+        }
         Node current = this.head;
         for (int i = 0; current.next != null; i++) {
             current = current.next;
@@ -79,7 +82,7 @@ public class LinkList<T> implements Iterable<T>{
     /**
      * 在指定位置插入元素
      * @param index 待插入位置
-     * @param t 插入蒜素
+     * @param t 插入元素
      */
     public void insert(int index, T t) {
         Node preNode = head;
@@ -98,6 +101,9 @@ public class LinkList<T> implements Iterable<T>{
      * @Return T 已删除的值
      */
     public T remove(int index) {
+        if(isEmpty()){
+            return null;
+        }
         Node preNode = head;
         for (int i = 0; i <= index - 1; i++) {
             preNode = preNode.next;     //循环index-1次找到删除点的前一个元素位置
