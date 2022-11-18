@@ -114,6 +114,93 @@ public class LinkList<T> implements Iterable<T>{
         return (T) currNode.item;
     }
 
+    /** 反转单链表 */
+    public void reverse() {
+        if (isEmpty()) {
+            return;
+        }
+        reverse(head.next);
+    }
+
+    /** 从node节点开始反转单链表 */
+    public Node reverse(Node current) {
+        if (current.next == null) { //找到原先尾元素，并使之成为新的头元素，并返回它本身
+            head.next = current;
+            return current;
+        }
+        //如果未找到尾元素，则把当前元素的下一个元素扔进递归调用，
+        //等待递归返回找到的尾元素后，拿尾元素next指针只指向自己并吧自己的next指针置为空后返回上层递归，直到返回头结点反转完成。
+        Node pre = reverse(current.next);
+        pre.next = current;
+        current.next = null;
+        return current;
+    }
+
+    /** 快慢指针获取中间值 */
+    public T getMid() {
+        if (isEmpty()){
+            return null;
+        }
+        //定义两个指针，起点都在头结点，快指针速度是慢指针一倍，快指针遍历到表尾时，由于速度差，满指针刚好在中间位置，完成查找返回
+        Node fast = head.next;
+        Node slow = head.next;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return (T) slow.item;
+    }
+
+    /**
+     * 判断单链表中链接是否有环
+     */
+    public boolean isCircl() {
+        if (isEmpty()) {
+            return false;
+        }
+        //依旧定义快慢指针，遍历链表，如快指针能追上满指针，则代表链表有环，如果遍历到末尾仍然未追上，则链表无环
+        Node fast = head.next;
+        Node slow = head.next;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast.equals(slow)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 获取单链表环起点
+     */
+    public T getCirclEnter() {
+        if (isEmpty()) {
+            return null;
+        }
+        //定义三个指针，使用快慢指针找到环入口后，快慢指针继续循环并加入temp指针，temp指针每次向后移动一个元素，直到与满指针相遇则找到环入口
+        Node fast = head.next;
+        Node slow = head.next;
+        Node temp = null;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast.equals(slow)) {    //找到环入口，创建temp从头结点开始执行
+                temp = head.next;
+                continue;
+            }
+            if (temp != null) {
+                temp = temp.next;
+                if (temp.equals(slow)) {
+                    break;
+                }
+            }
+        }
+        return (T) temp;
+    }
+
+
     @Override
     public Iterator<T> iterator() {
         return new LinkListIterator();

@@ -16,6 +16,7 @@ public class LinkListTest {
         list.insert("小鱼");
         //测试插入
         list.insert(1, "小鸭");
+
         //测试获取元素索引
         System.out.println("小鸭index值：" + list.indexOf("小鸭"));
         System.out.println("小雅index值：" + list.indexOf("小雅"));
@@ -33,9 +34,20 @@ public class LinkListTest {
         //删除元素
         String remove = (String) list.remove(0);
         System.out.println("remove:" + remove);
+
+        System.out.println("反转前：");
         for (String s : list) {
             System.out.println(s + "/");
         }
+        System.out.println("反转后：");
+        list.reverse();
+        for (String s : list) {
+            System.out.println(s + "/");
+        }
+
+        System.out.println("获取中间值："+list.getMid());
+
+
         //清空
         list.clear();
         System.out.println("清空后长度:" + list.length());
