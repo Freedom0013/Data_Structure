@@ -146,6 +146,7 @@ public class Tools {
             return 0.0d;
         }
         Stack<Double> stack = new Stack<>();
+        //遍历数组把找到的数压栈，找到运算符时弹栈最近的两个栈元素进行计算后结果再进栈继续计算，注意减法和出发弹栈后计算顺序
         for (int i = 0; i < notice.length; i++) {
             String current = notice[i];
             Double d1;
