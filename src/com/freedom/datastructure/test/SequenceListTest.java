@@ -4,8 +4,8 @@ import com.freedom.datastructure.linear.SequenceList;
 
 /**
  * 线性表测试类
- * @Author Freedom0013 @Date 2022-11-16
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-16
+ * @version V1.00
  */
 public class SequenceListTest {
     public static void main(String[] args) {

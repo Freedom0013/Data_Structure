@@ -4,8 +4,8 @@ import java.util.Iterator;
 
 /**
  * 双向链表
- * @Author Freedom0013 @Date 2022-11-18
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-18
+ * @version V1.00
  */
 public class TowWayLinkList<T> implements Iterable<T>{
     /** 链表首结点 */
@@ -92,7 +92,7 @@ public class TowWayLinkList<T> implements Iterable<T>{
     /**
      * 获取双链表在index位置的元素值
      * @param index 索引
-     * @Return 元素值
+     * @return 元素值
      */
     public T get(int index) {
         if (isEmpty()) {
@@ -108,6 +108,7 @@ public class TowWayLinkList<T> implements Iterable<T>{
     /**
      * 获取元素t位置
      * @param t 待查询元素
+     * @return 元素值
      */
     public int indexOf(T t) {
         if (isEmpty()) {
@@ -126,7 +127,7 @@ public class TowWayLinkList<T> implements Iterable<T>{
     /**
      * 删除指定位置元素
      * @param index 指定位置
-     * @Return T 已删除的值
+     * @return T 已删除的值
      */
     public T remove(int index) {
         if (isEmpty()) {

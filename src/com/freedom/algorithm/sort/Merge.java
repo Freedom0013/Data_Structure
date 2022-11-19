@@ -4,13 +4,11 @@ import com.freedom.common.Tools;
 
 /**
  * 归并排序
- * @Author Freedom0013 @Date 2022-11-15
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-15
+ * @version V1.00
  */
 public class Merge{
-    /**
-     * 归并所需的辅助数组
-     */
+    /** 归并所需的辅助数组 */
     private static Comparable<Integer>[] assist;
 
     /**
@@ -19,8 +17,6 @@ public class Merge{
      * 分治、递归思想，稳定排序，时间复杂度：O(nLogN)
      * @param array 待排数组
      * @param isDesc 是否倒序
-     * @Return void
-     * @Author Freedom0013 @Date 2022-11-15
      */
     public static void mergeSort(Comparable<Integer>[] array, boolean isDesc) {
         if (array == null || array.length < 2) {
@@ -40,8 +36,6 @@ public class Merge{
      * @param low 元素下限
      * @param high 元素上限
      * @param isDesc 是否倒序
-     * @Return void
-     * @Author Freedom0013 @Date 2022-11-15
      */
     private static void mergeSort(Comparable<Integer>[] array, int low, int high, boolean isDesc) {
         if (array == null || array.length < 2) {
@@ -66,8 +60,6 @@ public class Merge{
      * @param low 元素下限
      * @param mid 中间元素
      * @param high 元素上限
-     * @Return void
-     * @Author Freedom0013 @Date 2022-11-15
      */
     private static void merge(Comparable<Integer>[] array, int low, int mid, int high, boolean isDesc) {
         //三个指针

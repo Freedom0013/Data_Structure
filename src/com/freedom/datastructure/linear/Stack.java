@@ -4,13 +4,14 @@ import java.util.Iterator;
 
 /**
  * 栈实现
- * @Author Freedom0013 @Date 2022-11-19
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-19
+ * @version V1.00
  */
 public class Stack<T> implements Iterable<T>{
+    /** 栈头结点 */
     private Node head;
+    /** 栈大小 */
     private int size;
-
 
     public Stack(){
         this.head = new Node(null,null);

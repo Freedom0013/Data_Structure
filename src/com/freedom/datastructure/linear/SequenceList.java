@@ -4,8 +4,8 @@ import java.util.Iterator;
 
 /**
  * 线性表
- * @Author Freedom0013 @Date 2022-11-16
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-16
+ * @version V1.00
  */
 public class SequenceList<T> implements Iterable<T>{
     /** 线性表存储元素的数组 */
@@ -73,7 +73,7 @@ public class SequenceList<T> implements Iterable<T>{
     /**
      * 删除index索引处值并返回该元素
      * @param index 待删除索引值
-     * @Return T 返回已删除的元素
+     * @return T 返回已删除的元素
      */
     public T remove(int index) {
         T current = arrays[index];
@@ -90,7 +90,7 @@ public class SequenceList<T> implements Iterable<T>{
     /**
      * 返回元素t所在的索引值
      * @param t 元素
-     * @Return int 元素所在索引
+     * @return int 元素所在索引
      */
     public int indexOf(T t) {
         if (t == null) {
@@ -107,7 +107,7 @@ public class SequenceList<T> implements Iterable<T>{
     /**
      * 获取index索引处元素值
      * @param index 索引值
-     * @Return T 元素值
+     * @return T 元素值
      */
     public T get(int index) {
         return arrays[index];

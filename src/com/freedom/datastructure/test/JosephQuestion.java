@@ -3,8 +3,8 @@ package com.freedom.datastructure.test;
 /**
  * 循环链表解决约瑟夫问题
  * 约瑟夫问题：有41个人进行1-3报数，报到3的人退出游戏，请问最后剩余在场的最后两名玩家的标号是什么？
- * @Author Freedom0013 @Date 2022-11-18
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-18
+ * @version V1.00
  */
 public class JosephQuestion {
     public static void main(String[] args) {

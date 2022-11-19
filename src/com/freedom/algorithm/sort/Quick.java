@@ -4,8 +4,8 @@ import com.freedom.common.Tools;
 
 /**
  * 快速排序
- * @Author Freedom0013 @Date 2022-11-15
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-15
+ * @version V1.00
  */
 public class Quick {
     /**
@@ -14,8 +14,7 @@ public class Quick {
      * 不稳定排序，时间复杂度：最优：O(nlogN)，最坏：O(N^2)，平均O(nlogN)
      * @param array 待排数组
      * @param isDesc 是否倒序
-     * @Return java.lang.Comparable<T>[]
-     * @Author Freedom0013 @Date 2022-11-15
+     * @return java.lang.Comparable<T>[] 已排序数组
      */
     public static <T> Comparable<T>[] quickSort(Comparable<T>[] array, boolean isDesc) {
         if (array == null) {
@@ -32,8 +31,7 @@ public class Quick {
      * @param low 索引下限
      * @param high 索引上限
      * @param isDesc 是否倒序
-     * @Return java.lang.Comparable<T>[]
-     * @Author Freedom0013 @Date 2022-11-15
+     * @return java.lang.Comparable<T>[] 已排序数组
      */
     private static <T> Comparable<T>[] quickSort(Comparable<T>[] array, int low, int high, boolean isDesc) {
         if (high <= low) {//安全值校验
@@ -51,8 +49,7 @@ public class Quick {
      * @param low 索引下限
      * @param high 索引上限
      * @param isDesc 是否倒序
-     * @Return int 分组界限对应索引
-     * @Author Freedom0013 @Date 2022-11-15
+     * @return int 分组界限对应索引
      */
     private static <T> int partition(Comparable<T>[] array, int low, int high, boolean isDesc) {
         //确定分界值,第一个分界值应该为数组第一个元素，随后以第一个元素为基准，在正序排序时，左指针找比分界打的元素，

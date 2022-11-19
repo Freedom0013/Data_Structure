@@ -5,8 +5,8 @@ import com.freedom.common.Tools;
 
 /**
  * 排序测试类
- * @Author Freedom0013 @Date 2022-11-15
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-15
+ * @version V1.00
  */
 public class AlgorithmTest {
     public static void main(String[] args) {

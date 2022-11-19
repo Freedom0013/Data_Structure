@@ -4,8 +4,8 @@ import com.freedom.datastructure.linear.LinkList;
 
 /**
  * 单链表测试
- * @Author Freedom0013 @Date 2022-11-17
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-17
+ * @version V1.00
  */
 public class LinkListTest {
     public static void main(String[] args) {

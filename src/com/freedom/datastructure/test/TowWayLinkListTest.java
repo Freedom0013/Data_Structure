@@ -4,8 +4,8 @@ import com.freedom.datastructure.linear.TowWayLinkList;
 
 /**
  * 双链表测试类
- * @Author Freedom0013 @Date 2022-11-16
- * @Version V1.00
+ * @author Freedom0013 @Date 2022-11-16
+ * @version V1.00
  */
 public class TowWayLinkListTest {
     public static void main(String[] args) {

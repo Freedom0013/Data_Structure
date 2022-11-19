@@ -4,8 +4,8 @@ import com.freedom.common.Tools;
 
 /**
  * 希尔排序
- * @Author Freedom0013 @Date 2022-11-15
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-15
+ * @version V1.00
  */
 public class Shell {
     /**
@@ -13,8 +13,7 @@ public class Shell {
      * 选定一个增长量h，按h为数组分组（h一般为）,为每一组数据执行插入排序，完成一组h--最小减到1为止。不稳定排序，时间复杂度：O(n^1.3)
      * @param array 待排数组
      * @param isDesc 是否倒序
-     * @Return java.lang.Comparable<T>[]
-     * @Author Freedom0013 @Date 2022-11-15
+     * @return java.lang.Comparable<T>[] 已排序数组
      */
     public static <T> Comparable<T>[] shellSort(Comparable<T>[] array, boolean isDesc) {
         if (array == null || array.length < 2) {

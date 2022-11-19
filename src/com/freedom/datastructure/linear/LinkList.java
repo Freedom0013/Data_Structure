@@ -4,8 +4,8 @@ import java.util.Iterator;
 
 /**
  * 单链表存储结构
- * @Author Freedom0013 @Date 2022-11-17
- * @Version V1.00
+ * @author Freedom0013 @date 2022-11-17
+ * @version V1.00
  */
 public class LinkList<T> implements Iterable<T>{
     /** 链表头结点(没有元素内容，但拥有指向第一个节点的指针) */
@@ -34,7 +34,7 @@ public class LinkList<T> implements Iterable<T>{
     /**
      * 获取单链表在index位置的元素值
      * @param index 索引
-     * @Return T 元素值
+     * @return T 元素值
      */
     public T get(int index) {
         if (index < 0 || isEmpty()) {
@@ -98,7 +98,7 @@ public class LinkList<T> implements Iterable<T>{
     /**
      * 删除指定位置元素
      * @param index 指定位置
-     * @Return T 已删除的值
+     * @return T 已删除的值
      */
     public T remove(int index) {
         if(isEmpty()){
