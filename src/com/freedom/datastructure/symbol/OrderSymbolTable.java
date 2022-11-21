@@ -1,4 +1,4 @@
-package com.freedom.datastructure.linear;
+package com.freedom.datastructure.symbol;
 
 /**
  * 有序符号表（键值对存储）

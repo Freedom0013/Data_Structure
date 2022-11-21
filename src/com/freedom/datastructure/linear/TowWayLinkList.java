@@ -9,9 +9,9 @@ import java.util.Iterator;
  */
 public class TowWayLinkList<T> implements Iterable<T>{
     /** 链表首结点 */
-    private TowWayLinkList.Node head;
+    private Node head;
     /** 链表尾结点 */
-    private TowWayLinkList.Node last;
+    private Node last;
     /** 链表长度 */
     private int size;
 
@@ -146,7 +146,7 @@ public class TowWayLinkList<T> implements Iterable<T>{
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<T> iterator() {
         return new TowWayLinkListIterator();
     }
 
@@ -173,15 +173,15 @@ public class TowWayLinkList<T> implements Iterable<T>{
     /** 双链表节点类(一个数据域，两个指针域) */
     private class Node<T> {
         /** 上一个元素指针 */
-        public TowWayLinkList.Node pre;
+        public Node pre;
         /** 当前数据元素 */
         public T item;
         /** 下一个元素指针 */
-        public TowWayLinkList.Node next;
+        public Node next;
 
         private Node() {}
 
-        public Node(TowWayLinkList.Node pre, T item, TowWayLinkList.Node next) {
+        public Node(Node pre, T item, Node next) {
             this.pre = pre;
             this.item = item;
             this.next = next;

@@ -1,7 +1,7 @@
 package com.freedom.datastructure.test;
 
-import com.freedom.datastructure.linear.OrderSymbolTable;
-import com.freedom.datastructure.linear.SymbolTable;
+import com.freedom.datastructure.symbol.OrderSymbolTable;
+import com.freedom.datastructure.symbol.SymbolTable;
 
 /**
  * 符号表测试类

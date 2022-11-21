@@ -9,14 +9,14 @@ import java.util.Iterator;
  */
 public class Queue<T> implements Iterable<T> {
     /** 队列头结点 */
-    private Queue.Node head;
+    private Node head;
     /** 队列大小 */
     private int size;
     /** 队列尾结点 */
-    private Queue.Node last;
+    private Node last;
 
     public Queue() {
-        this.head = new Queue.Node(null, null);
+        this.head = new Node(null, null);
         this.last = null;
         size = 0;
     }
@@ -93,9 +93,9 @@ public class Queue<T> implements Iterable<T> {
         /** 当前数据元素 */
         public T item;
         /** 下一个元素指针 */
-        public Queue.Node next;
+        public Node next;
         private Node() {}
-        public Node(T item, Queue.Node next) {
+        public Node(T item, Node next) {
             this.item = item;
             this.next = next;
         }

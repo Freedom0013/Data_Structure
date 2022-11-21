@@ -1,4 +1,4 @@
-package com.freedom.datastructure.linear;
+package com.freedom.datastructure.symbol;
 
 import java.util.Iterator;
 
@@ -45,8 +45,7 @@ public class SymbolTable<Key,Value> implements Iterable<Key>{
         }
         //如符号表中无相同Key值，则创建新的结点添加在符号表末尾
         Node newNode = new Node(key, value, null);
-        Node oldNode = head.next;
-        newNode.next = oldNode;
+        newNode.next = head.next;
         head.next = newNode;
         size++;
     }
@@ -120,12 +119,12 @@ public class SymbolTable<Key,Value> implements Iterable<Key>{
     protected class Node {
         public Key key;
         public Value value;
-        public SymbolTable.Node next;
+        public Node next;
 
         private Node() {
         }
 
-        public Node(Key key, Value value, SymbolTable.Node next) {
+        public Node(Key key, Value value, Node next) {
             this.key = key;
             this.value = value;
             this.next = next;

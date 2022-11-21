@@ -78,13 +78,11 @@ public class Stack<T> implements Iterable<T>{
         /** 当前数据元素 */
         public T item;
         /** 下一个元素指针 */
-        public Stack.Node next;
+        public Node next;
         private Node() {}
-        public Node(T item, Stack.Node next) {
+        public Node(T item, Node next) {
             this.item = item;
             this.next = next;
         }
     }
-
-
 }
