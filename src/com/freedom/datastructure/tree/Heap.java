@@ -30,9 +30,6 @@ public class Heap<T extends Comparable<T>> {
      * @return boolean i是否小于j
      */
     private boolean less(int i, int j) {
-//        if (items[i] == null || items[j] == null) {
-//            return false;
-//        }
         return items[i].compareTo(items[j]) < 0;
     }
 

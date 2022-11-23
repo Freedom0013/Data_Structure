@@ -10,23 +10,23 @@ import com.freedom.datastructure.tree.Heap;
  */
 public class HeapTest {
     public static void main(String[] args) {
-//        Heap<String> heap = new Heap<>(10);
-//        heap.insert("A");
-//        heap.insert("B");
-//        heap.insert("C");
-//        heap.insert("D");
-//        heap.insert("E");
-//        heap.insert("F");
-//        heap.insert("G");
-//
-//        String res = null;
-//        while ((res = heap.deleteMax()) != null) {
-//            System.out.println(res);
-//        }
+        Heap<String> heap = new Heap<>(10);
+        heap.insert("A");
+        heap.insert("B");
+        heap.insert("C");
+        heap.insert("D");
+        heap.insert("E");
+        heap.insert("F");
+        heap.insert("G");
 
+        String res = null;
+        while ((res = heap.deleteMax()) != null) {
+            System.out.println(res);
+        }
+
+        //堆排序
         String[] arr = {"S","O","R","T","E","X","A","M","P","L","E"};
         HeapSort.heapSort(arr,false);
         Tools.displayArrays(arr);
-
     }
 }

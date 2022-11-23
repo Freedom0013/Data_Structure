@@ -28,7 +28,7 @@ public class HeapSort {
     private static void createHeap(Comparable[] source, Comparable[] heap) {
         //把原数组当中的元素复制进堆，并且对堆中元素进行下沉调整（长度从一半处即树干开始，向索引1处进行扫描）从而使堆有序
         System.arraycopy(source, 0, heap, 1, source.length);
-        for (int i = (heap.length) / 2; i > 0; i++) {
+        for (int i = (heap.length) / 2; i > 0; i--) {
             sink(heap, i, heap.length - 1);
         }
     }
@@ -44,7 +44,7 @@ public class HeapSort {
         while (2 * target <= range) {
             int max;//记录较大节点所在的索引
             if (2 * target + 1 <= range) {
-                if (less(heap,2 * target, 2 * target + 1)) {
+                if (less(heap, 2 * target, 2 * target + 1)) {
                     max = 2 * target + 1;
                 } else {
                     max = 2 * target;
@@ -53,31 +53,12 @@ public class HeapSort {
                 max = 2 * target;
             }
             //比较当前节点和较大值
-            if (!less(heap,target, max)) {
+            if (!less(heap, target, max)) {
                 break;
             }
-            exch(heap,target, max);
+            exch(heap, target, max);
             target = max;
         }
-
-//        while (2 * target <= range) {
-//            int max;//找出当前节点的较大子节点
-//            if (2 * target + 1 <= range) {
-//                if (less(heap, 2 * target, 2 * target + 1)) {
-//                    max = 2 * target + 1;
-//                } else {
-//                    max = 2 * target;
-//                }
-//            } else {
-//                max = 2 * target;
-//            }
-//            //比较当前节点和较大叶子结点
-//            if (!less(heap, target, max)) {
-//                break;
-//            }
-//            exch(heap, target, max);
-//            target = max;
-//        }
     }
 
     /**
