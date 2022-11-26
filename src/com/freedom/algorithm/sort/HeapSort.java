@@ -64,10 +64,9 @@ public class HeapSort {
     /**
      * 堆排序
      * @param array 待排数组
-     * @param isDesc 是否倒序
      * @return java.lang.Comparable<T>[] 已排序数组
      */
-    public static <T> void heapSort(Comparable<T>[] array, boolean isDesc) {
+    public static <T> void heapSort(Comparable<T>[] array) {
         if (array == null || array.length < 2) {
             return;
         }
