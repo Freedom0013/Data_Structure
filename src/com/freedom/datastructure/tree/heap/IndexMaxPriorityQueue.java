@@ -1,25 +1,13 @@
-package com.freedom.datastructure.tree;
+package com.freedom.datastructure.tree.heap;
 
 import java.util.Arrays;
 
 /**
- * 索引最小优先队列
- * 为堆中所有数据关联一个索引
- *
- * T[] items;
- *      0   1   2   3   4   5   6   7   8   9   10  11
- *      S   O   R   T   E   X   A   M   P   L   E
- * int[] qp 存放堆调整后的顺序后，items中元素的索引
- *      0   1   2   3   4   5   6   7   8   9   10  11
- *      -   6   10  4   9   7   1   8   2   0   3   5
- * int[] qp 存放pq数组的逆序
- *      0   1   2   3   4   5   6   7   8   9   10  11
- *      9   6   8   10  3   11  1   5   7   4   2   -
- *
+ * 索引最大优先队列
  * @author Freedom0013 @Date 2022-11-27
  * @version V1.00
  */
-public class IndexMinPriorityQueue<T extends Comparable<T>> extends MinPriorityQueue{
+public class IndexMaxPriorityQueue<T extends Comparable<T>> extends MaxPriorityQueue{
     /** 保存每个元素在items中的索引，pq数组需要堆有序 */
     private int[] pq;
     /** 保存pq数组的逆序，使用pq的索引作为qp的元素，pq的元素作为qp的索引 */
@@ -29,7 +17,7 @@ public class IndexMinPriorityQueue<T extends Comparable<T>> extends MinPriorityQ
      * 构造堆
      * @param capacity 堆大小
      */
-    public IndexMinPriorityQueue(int capacity) {
+    public IndexMaxPriorityQueue(int capacity) {
         super(capacity);
         this.pq = new int[capacity + 1];
         this.qp = new int[capacity + 1];
@@ -78,7 +66,7 @@ public class IndexMinPriorityQueue<T extends Comparable<T>> extends MinPriorityQ
      * 获取最小元素关联的索引值
      * @return int 最小元素索引
      */
-    public int getMinIndex(){
+    public int getMaxIndex(){
         if (isEmpty()) {
             return -1;
         }
@@ -136,14 +124,14 @@ public class IndexMinPriorityQueue<T extends Comparable<T>> extends MinPriorityQ
         if (isEmpty()) {
             return -1;
         }
-        int minIndex = pq[1];   //获取最小元素值索引
+        int maxIndex = pq[1];   //获取最大元素值索引
         exch(1, size);      //交换pq处索引1处和最大索引处值等待删除
         qp[pq[size]] = -1;     //删除qp数组对应pq内容
         pq[size] = -1;      //删除pq中换下来的最小元素
-        items[minIndex] = null; //删除最小元素items原始值
+        items[maxIndex] = null; //删除最小元素items原始值
         size--;         //元素个数-1
         sink(1);    //下沉调整刚刚临时换上来的堆顶元素
-        return minIndex;
+        return maxIndex;
     }
 
 

@@ -1,7 +1,7 @@
 package com.freedom.datastructure.test;
 
-import com.freedom.datastructure.tree.IndexMaxPriorityQueue;
-import com.freedom.datastructure.tree.IndexMinPriorityQueue;
+import com.freedom.datastructure.tree.heap.IndexMaxPriorityQueue;
+import com.freedom.datastructure.tree.heap.IndexMinPriorityQueue;
 
 /**
  * 索引优先队列测试

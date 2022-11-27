@@ -1,7 +1,7 @@
-package com.freedom.datastructure.tree;
+package com.freedom.datastructure.tree.heap;
 
 /**
- * 堆实现
+ * 堆框架
  * 利用完全二叉树（根节点大于其叶子节点）与数组进行存储
  * @author Freedom0013 @Date 2022-11-21
  * @version V1.00

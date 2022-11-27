@@ -1,7 +1,7 @@
-package com.freedom.datastructure.tree;
+package com.freedom.datastructure.tree.heap;
 
 /**
- * 最小优先队列
+ * 最小优先队列(小顶堆存储实现)
  * @author Freedom0013 @Date 2022-11-26
  * @version V1.00
  */

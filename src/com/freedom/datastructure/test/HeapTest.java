@@ -2,9 +2,9 @@ package com.freedom.datastructure.test;
 
 import com.freedom.algorithm.sort.HeapSort;
 import com.freedom.common.Tools;
-import com.freedom.datastructure.tree.Heap;
-import com.freedom.datastructure.tree.MaxPriorityQueue;
-import com.freedom.datastructure.tree.MinPriorityQueue;
+import com.freedom.datastructure.tree.heap.Heap;
+import com.freedom.datastructure.tree.heap.MaxPriorityQueue;
+import com.freedom.datastructure.tree.heap.MinPriorityQueue;
 
 /**
  * 堆测试

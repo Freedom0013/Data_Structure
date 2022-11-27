@@ -1,7 +1,7 @@
-package com.freedom.datastructure.tree;
+package com.freedom.datastructure.tree.heap;
 
 /**
- * 最大优先队列
+ * 最大优先队列(大顶堆存储实现)
  * @author Freedom0013 @Date 2022-11-24
  * @version V1.00
  */
