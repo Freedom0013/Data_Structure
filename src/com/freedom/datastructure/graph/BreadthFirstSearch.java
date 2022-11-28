@@ -20,11 +20,11 @@ public class BreadthFirstSearch {
      * @param graph 图
      * @param s 顶点
      */
-    public BreadthFirstSearch(Graph graph,int s) {
+    public BreadthFirstSearch(Graph graph, int start) {
         this.marked = new boolean[graph.getVertex()];
         this.count = 0;
         this.waitSearch = new Queue<Integer>();
-        breadthFirstSearch(graph, s);
+        breadthFirstSearch(graph, start);
     }
 
     /**
@@ -51,11 +51,13 @@ public class BreadthFirstSearch {
      * @param w 顶点w
      * @return boolean 是否联通
      */
-    public boolean mark(int w){
+    public boolean mark(int w) {
         return marked[w];
     }
 
-    /** 获取顶点s相通的所有顶点总数 */
+    /**
+     * 获取顶点s相通的所有顶点总数
+     */
     public int getCount() {
         return count;
     }

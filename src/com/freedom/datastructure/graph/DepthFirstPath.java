@@ -1,24 +1,29 @@
 package com.freedom.datastructure.graph;
 
+import com.freedom.datastructure.linear.Stack;
+
 /**
- * 图深度优先遍历
+ * 图的路径查找
  * @author Freedom0013 @Date 2022-11-28
  * @version V1.00
  */
-public class DepthFirstSearch {
+public class DepthFirstPath {
     /** 索引代表顶点，值标识当前顶点是否被搜索过 */
     private boolean[] marked;
-    /** 记录有多少个顶点与s顶点相连 */
-    private int count;
+    /** 起点 */
+    private int start;
+    /** 索引代表顶点，值标识从起点start到当前顶点路径上的最后一个顶点 */
+    private int[] edgeTo;
 
     /**
      * 构造深度优先遍历对象，搜索找出graph图中s顶点的所有相邻顶点
      * @param graph 图
-     * @param start 顶点
+     * @param s 顶点
      */
-    public DepthFirstSearch(Graph graph, int start) {
+    public DepthFirstPath(Graph graph, int start) {
         this.marked = new boolean[graph.getVertex()];
-        this.count = 0;
+        this.start = start;
+        this.edgeTo = new int[graph.getVertex()];
         depthFirstSearch(graph, start);
     }
 
@@ -32,10 +37,10 @@ public class DepthFirstSearch {
         for (Integer w : graph.getAdjacencyList(vertex)) {
             //判断当前w顶点有没有被搜索过，如果没有被搜索过则递归调用dfs深度优先
             if (!marked[w]) {
+                edgeTo[w] = vertex;
                 depthFirstSearch(graph, w);
             }
         }
-        count++;
     }
 
     /**
@@ -43,12 +48,24 @@ public class DepthFirstSearch {
      * @param w 顶点w
      * @return boolean 是否联通
      */
-    public boolean mark(int w){
-        return marked[w];
+    public boolean hasPathTo(int vertex) {
+        return marked[vertex];
     }
 
-    /** 获取顶点s相通的所有顶点总数 */
-    public int getCount() {
-        return count;
+    /**
+     * 找出从start到vertex的路径
+     * @param vertex 顶点v
+     * @return com.freedom.datastructure.linear.Stack<java.lang.Integer> 路径栈
+     */
+    public Stack<Integer> pathTo(int vertex) {
+        if (!hasPathTo(vertex)) {
+            return null;
+        }
+        Stack<Integer> path = new Stack<>();
+        for (int x = vertex; x != start; x = edgeTo[x]) {
+            path.push(x);
+        }
+        path.push(start);
+        return path;
     }
 }
