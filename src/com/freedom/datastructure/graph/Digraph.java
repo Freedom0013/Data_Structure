@@ -3,11 +3,11 @@ package com.freedom.datastructure.graph;
 import com.freedom.datastructure.linear.Queue;
 
 /**
- * 无向图
+ * 有向图
  * @author Freedom0013 @Date 2022-11-28
  * @version V1.00
  */
-public class Graph {
+public class Digraph {
     /** 图定点数目 */
     private final int vertex;
     /** 图边的数目 */
@@ -15,34 +15,36 @@ public class Graph {
     /** 邻接表 */
     private Queue<Integer>[] adjacencyList;
 
-    public Graph(int vertex) {
+    /**
+     * 构造有向图
+     * @param vertex 顶点数量
+     */
+    public Digraph(int vertex) {
         this.vertex = vertex;
         this.Edge = 0;
         this.adjacencyList = new Queue[vertex];
+
         for (int i = 0; i < adjacencyList.length; i++) {
-            adjacencyList[i] = new Queue<Integer>();
+            adjacencyList[i] = new Queue<>();
         }
     }
 
-    /** 获取顶点数量 */
     public int getVertex() {
         return this.vertex;
     }
 
-    /** 获取边数量 */
     public int getEdge() {
         return this.Edge;
     }
 
     /**
-     * 为无向图两个顶点添加一条边
+     * 为有向图两个顶点添加一条边
      * @param vertex1 顶点1
      * @param vertex2 顶点2
      */
     public void addEdge(int vertex1, int vertex2) {
-        //无向图边v1-v2同时v2-v1
+        //有向图边v1-w2
         adjacencyList[vertex1].enqueue(vertex2);
-        adjacencyList[vertex2].enqueue(vertex1);
         Edge++;
     }
 
@@ -53,5 +55,19 @@ public class Graph {
      */
     public Queue<Integer> getAdjacencyList(int vertex) {
         return adjacencyList[vertex];
+    }
+
+    /**
+     * 获取该图的反向图
+     * @return com.freedom.datastructure.graph.Digraph 反转有向图对象
+     */
+    private Digraph reverse() {
+        Digraph re = new Digraph(vertex);
+        for (int i = 0; i < vertex; i++) {
+            for (Integer w : adjacencyList[i]) {
+                re.addEdge(w, i);
+            }
+        }
+        return re;
     }
 }
