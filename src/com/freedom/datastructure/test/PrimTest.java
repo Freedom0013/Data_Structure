@@ -2,6 +2,7 @@ package com.freedom.datastructure.test;
 
 import com.freedom.datastructure.graph.Edge;
 import com.freedom.datastructure.graph.EdgeWeightedGraph;
+import com.freedom.datastructure.graph.KruskalMST;
 import com.freedom.datastructure.graph.PrimMST;
 import com.freedom.datastructure.linear.Queue;
 
@@ -30,8 +31,12 @@ public class PrimTest {
         edgeWeightedGraph.addEdge(new Edge(6, 0, 0.58d));
         edgeWeightedGraph.addEdge(new Edge(6, 4, 0.93d));
 
-        PrimMST primMST = new PrimMST(edgeWeightedGraph);
-        Queue<Edge> edges = primMST.edges();
+//        PrimMST primMST = new PrimMST(edgeWeightedGraph);
+//        Queue<Edge> edges = primMST.edges();
+
+        KruskalMST kruskalMST = new KruskalMST(edgeWeightedGraph);
+        Queue<Edge> edges = kruskalMST.edges();
+
         for (Edge edge : edges) {
             int v = edge.getEither();
             int w = edge.getOther(v);
